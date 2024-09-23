@@ -2,15 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scores</title>
+    <title>CatchPhrase</title>
     <link rel="icon" href="favicon.ico" />
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+    }
+    </style>
   </head>
   <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
       <h1>CatchPhrase<sup>&reg;</sup></h1>
 
+      <!-- Navigation elements -->
       <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
           <li><a href="index.html">Home</a></li>
           <li><a href="play.html">Play</a></li>
@@ -19,47 +32,34 @@
         </menu>
       </nav>
 
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
 
     <main>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Score</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>도윤 이</td>
-            <td>34</td>
-            <td>May 20, 2021</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Annie James</td>
-            <td>29</td>
-            <td>June 2, 2021</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Gunter Spears</td>
-            <td>7</td>
-            <td>July 3, 2020</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
+      <div class="Categories">
+        Player:
+        <span class="player-name">Mystery player</span>
+      </div>
 
-    <footer>
-      <hr />
-      <span class="text-reset">Cate Allen</span>
-      <br />
-      <a href="hhttps://github.com/Cate444/stratup">GitHub</a>
-    </footer>
-  </body>
-</html>
+      <div>
+        <table>
+            <tr>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+            <tr>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+            <tr>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+              <td><a href="activePlay.html"><button type="button">button</button></a></td>
+            </tr>
+          </table>
+      </div>
+    </main>

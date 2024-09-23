@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CatchPhrase</title>
+    <link rel="icon" href="favicon.ico" />
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+    }
+    </style>
+  </head>
+  <header>
+    <h1>CatchPhrase<sup>&reg;</sup></h1>
+
+    <!-- Navigation elements -->
+    <nav>
+      <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+      <menu>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="play.html">Play</a></li>
+        <li><a href="sharedDecks.html">Shared Decks</a></li>
+        <li><a href="yourDecks.html">Your Decks</a></li>
+      </menu>
+    </nav>
+
+    <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+    <hr />
+  </header>
+
+<body>
+
+    <h2>Your Deck Name</h2>
+    <input type="text" id="wordInput" placeholder="Enter a word">
+    <button onclick="addWord()">Add Word</button>
+    <button onclick="addWord()">Create Deck</button>
+
+    <div id="wordBank">
+        <h3>Word Bank:</h3>
+        <div id="words"></div>
+    </div>
+
+    <script>
+        function addWord() {
+            const input = document.getElementById("wordInput").value;
+            if (input.trim() !== "") {
+                const wordBank = document.getElementById("words");
+                
+                // Create a new span element to hold the word
+                const wordElement = document.createElement("span");
+                wordElement.className = "word";
+                wordElement.textContent = input;
+                
+                // Add the new word to the word bank
+                wordBank.appendChild(wordElement);
+
+                // Clear the input field
+                document.getElementById("wordInput").value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
