@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+<body>
+  <!-- Use header, main, and footer elements to give semantic structure -->
+  <header>
+    <h1>CatchPhrase<sup>&reg;</sup></h1>
+
+    <!-- Navigation elements -->
+    <nav>
+      <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+      <menu>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="play.html">Play</a></li>
+        <li><a href="sharedDecks.html">Shared Decks</a></li>
+        <li><a href="yourDecks.html">Your Decks</a></li>
+      </menu>
+    </nav>
+
+    <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+    <hr />
+  </header>
+
+    <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatchPhrase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #word-box {
+            border: 2px solid #333;
+            padding: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #next-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #scores {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .team-score {
+            text-align: center;
+        }
+    </style>
+    <div id="word-box">Example</div>
+    <button id="next-button">Next</button>
+    <div id="scores">
+        <div class="team-score">
+            <h2>Team A</h2>
+            <p id="team-a-score">0</p>
+        </div>
+        <div class="team-score">
+            <h2>Team B</h2>
+            <p id="team-b-score">0</p>
+        </div>
+    </div>
+
+    <script>
+        const wordBank = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
+        let currentIndex = 0;
+
+        function displayNextWord() {
+            const wordBox = document.getElementById('word-box');
+            wordBox.textContent = wordBank[currentIndex];
+            currentIndex = (currentIndex + 1) % wordBank.length;
+        }
+
+        document.getElementById('next-button').addEventListener('click', displayNextWord);
+
+        // Initial word display
+        displayNextWord();
+    </script>
+</body>
+</html>
