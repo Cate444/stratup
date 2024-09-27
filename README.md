@@ -25,22 +25,22 @@ Everyone loves to play the retro game catchphrase, but it needs a bit of updatin
 
 ## HTML:
 All pages have a header with title and links to other parts of the website and a footer with my name and GitHub
-# Home Page (index.html)
+### Home Page (index.html)
 * Welcom message
 * login 
-# Play (play.html)
+### Play (play.html)
 * Choices of decks you can play that are built into the game
 * links to active play
-# Shared Decks (sharedDecks.html)
+### Shared Decks (sharedDecks.html)
 * shows other players decks
 * links to active play
-# Your Decks (yourDecks.html)
+### Your Decks (yourDecks.html)
 * shows your decks
 * links to active play or newDecks page
-# New Decks (newDecks.html)
+### New Decks (newDecks.html)
 * names deck
 * add words to your deck
-# Active Play (activePlay.html)
+### Active Play (activePlay.html)
 * shows teams scores on  sides
 * gives you one word at a time
 * next button
