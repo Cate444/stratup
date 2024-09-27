@@ -22,3 +22,25 @@ Everyone loves to play the retro game catchphrase, but it needs a bit of updatin
 ![InPlay](https://github.com/user-attachments/assets/67deb223-32a2-4093-af48-5a58f07cc2bd)
 ![PersonalDecks](https://github.com/user-attachments/assets/a2a3b504-963a-402d-aabe-70e48443428f)
 ![HomePage](https://github.com/user-attachments/assets/1b23b422-a214-4a14-9235-7a09f0535058)
+
+## HTML:
+All pages have a header with title and links to other parts of the website and a footer with my name and GitHub
+### Home Page (index.html)
+* Welcom message
+* login 
+### Play (play.html)
+* Choices of decks you can play that are built into the game
+* links to active play
+### Shared Decks (sharedDecks.html)
+* shows other players decks
+* links to active play
+### Your Decks (yourDecks.html)
+* shows your decks
+* links to active play or newDecks page
+### New Decks (newDecks.html)
+* names deck
+* add words to your deck
+### Active Play (activePlay.html)
+* shows teams scores on  sides
+* gives you one word at a time
+* next button
