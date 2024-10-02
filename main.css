@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    background-color: rgb(95, 192, 237);
+  }
+  .bg-custom {
+    background-color: #1f79ff;
+    color: white;
+  }
+  
+  header {
+    background-color: blue;
+    flex: 0 80px;
+  }
+  
+  main {
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  footer {
+    flex: 0 300px;
+  }
+  
+  menu {
+    flex: 1;
+    display: flex;
+     /* overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+    text-light: white;
+  }
+  
+  
+  
+  footer a {
+    float: right;
+  }
+  
+  @media (max-height: 600px) {
+    header {
+      display: flex;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+  
