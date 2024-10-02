@@ -1,7 +1,12 @@
+  main {
+    flex: 1;
+  }
+
 body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
+    min-height: 100vh;
     background-color: rgb(95, 192, 237);
   }
   .bg-custom {
@@ -35,10 +40,12 @@ body {
     text-light: white;
   }
   
-  
-  
+
   footer a {
     float: right;
+    max-height: 60px;
+    padding: 10px 0;
+    height: auto;
   }
   
   @media (max-height: 600px) {

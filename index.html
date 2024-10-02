@@ -29,23 +29,24 @@
     color: white;
     text-decoration: none;
     padding-left: 0.3em;
-    align-items: center;
-  }
+    }
+
     </style>
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header class="container-fluid bg-primary">
-      <h1 class="text-center">CatchPhrase<sup>&reg;</sup></h1>
-      <!-- Navigation elements -->
-      <nav class="text-light text-center">
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu class="text-center">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="sharedDecks.html">Shared Decks</a></li>
-          <li><a href="yourDecks.html">Your Decks</a></li>
-        </menu>
+      <h1 class="text-center text-light">CatchPhrase<sup>&reg;</sup></h1>
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
+            <li class="nav-item"><a class="nav-link" href="sharedDecks.html">Shared Decks</a></li>
+            <li class="nav-item"><a class="nav-link" href="yourDecks.html">Your Decks</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -54,7 +55,7 @@
     </header>
 
     <main>
-      <h1>Welcome to CatchPhrase</h1>
+      <h1>Welcome!</h1>
       <form method="get" action="play.html">
         <div>
           <span>@</span>
@@ -68,12 +69,9 @@
         <button type="submit">Create</button>
       </form>
     </main>
-
-    <footer>
-      <hr />
-      <span class="text-reset">Cate Allen</span>
-      <br />
-      <a href="https://github.com/Cate444/stratup">GitHub</a>
+    <footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
+      <span>Cate Allen</span>
+      <a class="text-light" href="https://github.com/Cate444/stratup">GitHub</a>
     </footer>
   </body>
 </html>
