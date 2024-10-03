@@ -2,13 +2,35 @@
     flex: 1;
   }
 
-body {
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     min-width: 375px;
     min-height: 100vh;
     background-color: rgb(95, 192, 237);
-  }
+}
+  nav menu li a {
+  color: white;
+  text-decoration: none;
+  padding-left: 0.3em;
+}
+  h1.catchphrase-title {
+  font-size: 70px;
+}
+
+  h1.catchphrase-title {
+    font-size: 5rem; /* Even bigger */
+    }
+
+    .nav-link {
+        font-size: 1.5em;
+    }
 
   button {
     background-color: rgb(95, 192, 237);

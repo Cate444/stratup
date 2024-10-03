@@ -6,29 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CatchPhrase</title>
     <link rel="icon" href="favicon.ico" />
-    <style> 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-    }
     </style>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="play.css" />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="play.css" />
+    <style> 
+      body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+  }
+        h1.catchphrase-title {
+        font-size: 70px;
+  }
+  </style>
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header class="container-fluid bg-primary">
-      <h1 class="text-center text-light">CatchPhrase<sup>&reg;</sup></h1>
+      <h1 class="text-center text-light catchphrase-title">CatchPhrase<sup>&reg;</sup></h1>
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
           <ul class="navbar-nav mx-auto">
@@ -42,9 +46,9 @@
     </header>
 
     <main>
-      <div type="player-messages">
+      <div class="player-status text-center">
         <span class="player-name">User Name</span>
-        is playing!
+        <span class="playing-text">is playing!</span>
       </div>
 
       <div>
@@ -63,7 +67,7 @@
               <td><a href="activePlay.html"><button class="custom-button">The Great Outdoors</button></a></td>
               <td><a href="activePlay.html"><button class="custom-button">History Buff</button></a></td>
               <td><a href="activePlay.html"><button class="custom-button">Sports</button></a></td>
-              <td><a href="activePlay.html"><button class="custom-button">Around House</button></a></td>
+              <td><a href="activePlay.html"><button class="custom-button">Around the House</button></a></td>
             </tr>
           </table>
       </div>

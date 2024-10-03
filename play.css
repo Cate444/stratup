@@ -1,32 +1,22 @@
-#count {
-    color: rgb(246, 239, 158);
-    background-color: rgb(73, 175, 238);
-  }
+  .nav-link {
+    font-size: 1.5em;
+    }
   
-  .players {
-    flex: 1;
-    width: 100%;
-    padding: 0.5em;
-  }
-  
+    body {
+        background-color: rgb(255, 255, 255);
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+}
+      h1.catchphrase-title {
+      font-size: 70px;
+}
+
   .player-name {
     color: rgb(118, 190, 210);
     font-size: 25px;
-  }
-  
-  #player-messages {
-    padding-top: 0.25em;
-    opacity: 0.7;
-    font-size: 25px;
-  }
-  
-  
-  .player-event {
-    color: rgb(165, 220, 235);
-  }
-
-  button {
-    background-color: rgb(95, 192, 237);
   }
 
   .custom-button {
@@ -49,10 +39,9 @@
     background-color: rgb(0, 110, 255); /* Darker green on hover */
   }
 
-  .center {
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+  .player-status {
+    text-center;
+    font-size: 20px;
   }
 
   footer a {
