@@ -6,22 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CatchPhrase</title>
     <link rel="icon" href="favicon.ico" />
-    <style> 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-    }
-    </style>
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CatchPhrase</title>
-    <link rel="icon" href="favicon.ico" />
-    </style>
 
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -44,8 +28,8 @@
   }
   </style>
   </head>
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
+  <body class="d-flex flex-column min-vh-100">
+
     <header class="container-fluid bg-primary">
       <h1 class="text-center text-light catchphrase-title">CatchPhrase<sup>&reg;</sup></h1>
       <nav class="navbar navbar-expand-lg navbar-dark">
@@ -60,13 +44,13 @@
       </nav>
     </header>
 
-    <main>
+    <main class="flex-grow-1">
       <div class="player-status text-center">
         <span class="player-name">User Name</span>
         <span class="playing-text">is playing!</span>
       </div>
 
-      <div>
+      <div class="button-grid">
         <table>
             <tr>
               <td><a href="activePlay.html"><button class="custom-button">Name: Creator</button></a></td>
