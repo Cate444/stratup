@@ -9,6 +9,11 @@ body {
     min-height: 100vh;
     background-color: rgb(95, 192, 237);
   }
+
+  button {
+    background-color: rgb(95, 192, 237);
+  }
+
   .bg-custom {
     background-color: #1f79ff;
     color: white;

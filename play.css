@@ -1,0 +1,63 @@
+#count {
+    color: rgb(246, 239, 158);
+    background-color: rgb(73, 175, 238);
+  }
+  
+  .players {
+    flex: 1;
+    width: 100%;
+    padding: 0.5em;
+  }
+  
+  .player-name {
+    color: rgb(118, 190, 210);
+    font-size: 25px;
+  }
+  
+  #player-messages {
+    padding-top: 0.25em;
+    opacity: 0.7;
+    font-size: 25px;
+  }
+  
+  
+  .player-event {
+    color: rgb(165, 220, 235);
+  }
+
+  button {
+    background-color: rgb(95, 192, 237);
+  }
+
+  .custom-button {
+    border-radius: 20px 20px 20px 20px;
+    width: 350px;
+    height: 150px;
+    background-color: rgb(95, 192, 237);
+    color: white; 
+    border: 2px solid rgb(62, 184, 245);
+    padding: 15px 32px; /* Add some padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer; /* Add a pointer cursor on hover */
+  }
+  
+  .custom-button:hover {
+    background-color: rgb(0, 110, 255); /* Darker green on hover */
+  }
+
+  .center {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  footer a {
+    float: right;
+    max-height: 60px;
+    padding: 10px 0;
+    height: auto;
+  }
