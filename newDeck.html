@@ -30,14 +30,13 @@
         </div>
       </nav>
     </header>
-    <main class="flex-grow-1 w-100"></main>
+    <main class="flex-grow-1 w-100">
       <div class="player-status text-center">
-        <span class="player-name">User Name</span>
-        <span class="playing-text">is playing!</span>
+        <span id="player-name">User Name</span>
+        <span class="text-light">is playing!</span>
       </div>
-    <div class="Categories">
-      <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/03/cover-l.jpg" width="85" height="44">
-    <h2>Make Your Own</h2>
+      <img id ="img" src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/03/cover-l.jpg" width="30%"; height="auto";>
+      <h2 class="text-center text-light">Make Your Own</h2>
     <div>
         <div class="input-group mb-3">
           <span class="input-group-text">Enter a Word</span>
@@ -46,7 +45,7 @@
         </div>
     </div>
     <div>
-      <form method="get" action="play.html">
+      <form method="get" action="yourDecks.html">
         <div class="input-group mb-3">
           <span class="input-group-text">Deck Name</span>
           <input class="form-control" type="text" placeholder="Name" />
@@ -54,7 +53,7 @@
         </div>
     </div>
     <div id="wordBank">
-        <h3>Word Bank:</h3>
+        <h3 class="text-center text-light">Word Bank:</h3>
         <div id="words"></div>
     </div>
 
@@ -62,7 +61,7 @@
         function addWord() {
             const input = document.getElementById("wordInput").value;
             if (input.trim() !== "") {
-                const wordBank = document.getElementById("words");
+                const wordBank = document.getElementById("words"); 
                 
                 // Create a new span element to hold the word
                 const wordElement = document.createElement("span");
@@ -73,12 +72,13 @@
                 wordBank.appendChild(wordElement);
 
                 // Clear the input field
-                document.getElementById("wordInput").value = "";
+                document.getElementById("wordInput").value = " ";
             }
         }
     </script>
 
 </body>
+</main>
 <footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
   <span>Cate Allen</span>
   <a class="text-light" href="https://github.com/Cate444/stratup">GitHub</a>
