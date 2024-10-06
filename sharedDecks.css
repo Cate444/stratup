@@ -63,3 +63,67 @@
     padding: 10px 0;
     height: auto;
   }
+
+
+  .button-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .grid-button {
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: rgb(118, 190, 210);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .grid-button:hover {
+    background-color: #2980b9;
+  }
+  /* Mobile-first approach */
+.button-grid {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+  
+  /* Tablet screens */
+  @media screen and (min-width: 768px) {
+    .button-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+  }
+  
+  /* Desktop screens */
+  @media screen and (min-width: 1024px) {
+    .button-grid {
+      grid-template-columns: repeat(4, 1fr); /* Four columns */
+    }
+  }
+  /* Base button size */
+.grid-button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  
+  /* Larger buttons for bigger screens */
+  @media screen and (min-width: 768px) {
+    .grid-button {
+      font-size: 1.1rem;
+      padding: 1rem;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .grid-button {
+      font-size: 1.2rem;
+      padding: 1.25rem;
+    }
+  }
+  .button-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }

@@ -1,0 +1,121 @@
+main {
+    flex: 1;
+  }
+
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    min-height: 100vh;
+    background-color: rgb(95, 192, 237);
+}
+  nav menu li a {
+  color: white;
+  text-decoration: none;
+  padding-left: 0.3em;
+}
+  h1.catchphrase-title {
+  font-size: 70px;
+}
+
+  h1.catchphrase-title {
+    font-size: 5rem; /* Even bigger */
+    }
+
+    .nav-link {
+        font-size: 1.5em;
+    }
+
+  button {
+    background-color: rgb(95, 192, 237);
+  }
+
+  .bg-custom {
+    background-color: #1f79ff;
+    color: white;
+  }
+  
+  header {
+    background-color: blue;
+    flex: 0 80px;
+  }
+  
+  main {
+    flex: 1 calc(100vh - 1000px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  footer {
+    height: 50px;
+    margin-top: auto;
+  }
+  
+  menu {
+    flex: 1;
+    display: flex;
+     /* overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+  }
+
+  footer a {
+    float: right;
+    max-height: 60px;
+    padding: 10px 0;
+    height: auto;
+  }
+  
+  @media (max-height: 600px) {
+    header {
+      display: flex;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+  body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+  }
+  #word-box {
+      border: 2px solid #333;
+      padding: 20px;
+      font-size: 24px;
+      margin-bottom: 20px;
+  }
+  #next-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+  }
+  #scores {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 20px;
+  }
+  .team-score {
+      text-align: center;
+  }
+  footer a {
+    float: right;
+    max-height: 60px;
+    padding: 10px 0;
+    height: auto;
+  }

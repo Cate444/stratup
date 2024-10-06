@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="activePlay.css" />
+
 </head>
-<body>
-  <!-- Use header, main, and footer elements to give semantic structure -->
-  <header>
-    <h1>CatchPhrase<sup>&reg;</sup></h1>
-
-    <!-- Navigation elements -->
-    <nav>
-      <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-      <menu>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="play.html">Play</a></li>
-        <li><a href="sharedDecks.html">Shared Decks</a></li>
-        <li><a href="yourDecks.html">Your Decks</a></li>
-      </menu>
+<header class="container-fluid bg-primary">
+    <h1 class="text-center text-light catchphrase-title">CatchPhrase<sup>&reg;</sup></h1>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
+          <li class="nav-item"><a class="nav-link" href="sharedDecks.html">Shared Decks</a></li>
+          <li class="nav-item"><a class="nav-link" href="yourDecks.html">Your Decks</a></li>
+        </ul>
+      </div>
     </nav>
-
-    <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-    <hr />
   </header>
-
+<body>
+    <div class="Categories"></div>
+        Player:
+        <span class="player-name">User Name</span>
+      </div>
     <body>
         <div class="Categories">
             Player:
@@ -29,35 +35,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatchPhrase</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        #word-box {
-            border: 2px solid #333;
-            padding: 20px;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        #next-button {
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        #scores {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            margin-top: 20px;
-        }
-        .team-score {
-            text-align: center;
-        }
-    </style>
     <div id="word-box">Example</div>
     <button id="next-button">Next</button>
     <div id="scores">
@@ -87,10 +64,8 @@
         displayNextWord();
     </script>
 </body>
-<footer>
-    <hr />
-    <span class="text-reset">Cate Allen</span>
-    <br />
-    <a href="https://github.com/Cate444/stratup">GitHub</a>
+<footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
+    <span>Cate Allen</span>
+    <a class="text-light" href="https://github.com/Cate444/stratup">GitHub</a>
   </footer>
 </html>
