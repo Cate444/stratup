@@ -22,31 +22,41 @@
       </div>
     </nav>
   </header>
+<main class="flex-grow-1 w-100">
+    <div class="player-status text-center">
+        <span id="player-name">User Name</span>
+        <span class="text-light">is playing!</span>
+    </div>
 <body>
-    <div class="Categories"></div>
-        Player:
-        <span class="player-name">User Name</span>
-      </div>
-    <body>
-        <div class="Categories">
-            Player:
-            <span class="player-name">User Name</span>
-          </div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatchPhrase</title>
-    <div id="word-box">Example</div>
-    <button id="next-button">Next</button>
+    <h1 class="text-light">Category</h1>
+    <div class="game-container">
+        <div class="text-light">
+          <h2>Team A</h2>
+          <p id="team-a-score">0</p>
+        </div>
+        <div class="game-center">
+          <div id="word-box">Example</div>
+          <button id="next-button" type="submit" class="btn btn-primary">Next</button>
+        </div>
+        <div class="text-light">
+          <h2>Team B</h2>
+          <p id="team-b-score">0</p>
+        </div>
+      </div>
+    <!-- <div id="word-box">Example</div>
+    <button id="next-button" type="submit" class="btn btn-primary">Next</button>
     <div id="scores">
-        <div class="team-score">
+        <div class="text-light text-center">
             <h2>Team A</h2>
             <p id="team-a-score">0</p>
         </div>
-        <div class="team-score">
+        <div class="text-light text-center">
             <h2>Team B</h2>
             <p id="team-b-score">0</p>
         </div>
-    </div>
+    </div> -->
 
     <script>
         const wordBank = ['word1', 'word2', 'word3', 'word4', 'word5'];
@@ -64,8 +74,9 @@
         displayNextWord();
     </script>
 </body>
-<footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
-    <span>Cate Allen</span>
+</main>
+  <footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
+    <span class="tect-light">Cate Allen</span>
     <a class="text-light" href="https://github.com/Cate444/stratup">GitHub</a>
   </footer>
 </html>

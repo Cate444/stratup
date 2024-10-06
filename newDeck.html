@@ -13,33 +13,46 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
     crossorigin="anonymous"
   />
-  <link rel="stylesheet" href="newDeck.css" />
 
-<body>
-  <header class="container-fluid bg-primary"></header>
-    <h1 class="text-center text-light catchphrase-title">CatchPhrase<sup>&reg;</sup></h1>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
-          <li class="nav-item"><a class="nav-link" href="sharedDecks.html">Shared Decks</a></li>
-          <li class="nav-item"><a class="nav-link" href="yourDecks.html">Your Decks</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-    <div class="Categories"></div>
-        Player:
+  <link rel="stylesheet" href="activePlay.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <header class="container-fluid bg-primary">
+      <h1 class="text-center text-light catchphrase-title">CatchPhrase<sup>&reg;</sup></h1>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
+            <li class="nav-item"><a class="nav-link" href="sharedDecks.html">Shared Decks</a></li>
+            <li class="nav-item"><a class="nav-link" href="yourDecks.html">Your Decks</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-grow-1 w-100"></main>
+      <div class="player-status text-center">
         <span class="player-name">User Name</span>
+        <span class="playing-text">is playing!</span>
       </div>
+    <div class="Categories">
       <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/03/cover-l.jpg" width="85" height="44">
     <h2>Make Your Own</h2>
-    <input type="text" id="wordInput" placeholder="Enter a word">
-    <button onclick="addWord()">Add Word</button>
-    <input type="text" id="wordInput" placeholder="Deck Name">
-    <button onclick="addWord()">Create Deck</button>
-
+    <div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Enter a Word</span>
+          <input class="form-control" type="text" id="wordInput" placeholder="Enter a word"/>
+          <button onclick="addWord()" type="submit" class="btn btn-primary">Add Word</button>
+        </div>
+    </div>
+    <div>
+      <form method="get" action="play.html">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Deck Name</span>
+          <input class="form-control" type="text" placeholder="Name" />
+          <button onclick="addWord()" type="submit" class="btn btn-primary">Create Deck</button>
+        </div>
+    </div>
     <div id="wordBank">
         <h3>Word Bank:</h3>
         <div id="words"></div>
