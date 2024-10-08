@@ -44,3 +44,8 @@ All pages have a header with title and links to other parts of the website and a
 * shows teams scores on  sides
 * gives you one word at a time
 * next button
+
+## CSS
+* set up pop up screen
+* Get title to flex as well
+* update this readme file 
