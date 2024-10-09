@@ -46,6 +46,17 @@ All pages have a header with title and links to other parts of the website and a
 * next button
 
 ## CSS
-* set up pop up screen
-* Get title to flex as well
-* update this readme file 
+### Header, footer, and main content body
+* light blue colored body
+* dark blue footer and header
+### Navigation elements
+* Each elment or button links to correct pages
+### Responsive to window resizing
+* everthing icluding title resizes
+### Application elements
+* login
+* add new item to deck
+### Application text content
+* light text
+### Application images
+* Micheal Scott in add new deck
