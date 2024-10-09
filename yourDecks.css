@@ -10,8 +10,24 @@
         align-items: center;
         padding: 20px;
 }
-    h1.catchphrase-title {
-      font-size: 70px;
+h1.catchphrase-title {
+  font-size: 5vw; /* Base size using viewport width */
+  min-font-size: 2rem; /* Minimum font size */
+  max-font-size: 5rem; /* Maximum font size */
+}  
+@media screen and (max-width: 768px) {
+  h1.catchphrase-title {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1.catchphrase-title {
+    font-size: 4vw;
+  }
+}
+h1.catchphrase-title {
+  font-size: clamp(2rem, 5vw, 5rem);
 }
 
     .player-status {
