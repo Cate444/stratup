@@ -45,7 +45,7 @@ All pages have a header with title and links to other parts of the website and a
 * gives you one word at a time
 * next button
 
-## CSS
+## CSS:
 ### Header, footer, and main content body
 * light blue colored body
 * dark blue footer and header
