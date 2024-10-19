@@ -15,6 +15,7 @@
   />
 
   <link rel="stylesheet" href="activePlay.css" />
+  <script src="newDeck.js"></script>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid bg-primary">
@@ -48,37 +49,16 @@
       <form method="get" action="yourDecks.html">
         <div class="input-group mb-3">
           <span class="input-group-text">Deck Name</span>
-          <input class="form-control" type="text" placeholder="Name" />
-          <button onclick="addWord()" type="submit" class="btn btn-primary">Create Deck</button>
+          <input class="form-control" type="text" id="deckNameInput" placeholder="Name" />
+          <button onclick="nameDeck()" type="submit" class="btn btn-primary">Create Deck</button>
         </div>
     </div>
     <div id="wordBank">
-        <h3 class="text-center text-light">Word Bank:</h3>
-        <div id="words"></div>
-    </div>
-
-    <script>
-        function addWord() {
-            const input = document.getElementById("wordInput").value;
-            if (input.trim() !== "") {
-                const wordBank = document.getElementById("words"); 
-                
-                // Create a new span element to hold the word
-                const wordElement = document.createElement("span");
-                wordElement.className = "word";
-                wordElement.textContent = input;
-                
-                // Add the new word to the word bank
-                wordBank.appendChild(wordElement);
-
-                // Clear the input field
-                document.getElementById("wordInput").value = " ";
-            }
-        }
-    </script>
-
+      <h3 class="text-center text-light">Word Bank</h3>
+      <div id="words"></div></div>
 </body>
 </main>
+
 <footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
   <span>Cate Allen</span>
   <a class="text-light" href="https://github.com/Cate444/stratup">GitHub</a>
