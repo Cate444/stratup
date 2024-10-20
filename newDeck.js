@@ -1,6 +1,5 @@
 let allWords = []; // Array to hold all words
 let currentDeckName = ""; // Variable to hold the current deck name
-
 function addWord() {
     const input = document.getElementById("wordInput").value;
     if (input.trim() !== "") {
@@ -13,7 +12,6 @@ function addWord() {
         // Clear the input field
         document.getElementById("wordInput").value = "";
     }
-    console.log(allWords); // Log the array of words
 }
 
 // Function to display words in a list
@@ -42,7 +40,6 @@ function displayWords() {
     }
 }
 
-// Function to set the deck name
 function nameDeck() {
     const deckNameInput = document.getElementById("deckNameInput").value;
     if (deckNameInput.trim() !== "") {
@@ -51,3 +48,19 @@ function nameDeck() {
         document.getElementById("deckNameInput").value = ""; // Clear the input field
     }
 }
+
+const wordBank = allWords
+// ['word1', 'word2', 'word3', 'word4', 'word5'];
+// wordBank.push(...allWords); // Add all words to the word bank
+let currentIndex = 0;
+
+function displayNextWord() {
+    const wordBox = document.getElementById('word-box');
+    wordBox.textContent = wordBank[currentIndex];
+    currentIndex = (currentIndex + 1) % wordBank.length;
+}
+
+document.getElementById('next-button').addEventListener('click', displayNextWord);
+
+// Initial word display
+displayNextWord();

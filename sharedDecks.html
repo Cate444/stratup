@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CatchPhrase</title>
     <link rel="icon" href="favicon.ico" />
@@ -15,15 +14,6 @@
   />
 
   <link rel="stylesheet" href="play.css" />
-    <style> 
-      body {
-          font-family: Arial, sans-serif;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 20px;
-  }
-  </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
 
@@ -45,7 +35,7 @@
           <span class="player-name">User Name</span>
           <span class="playing-text">is playing!</span>
         <div class="button-grid"></div>
-          <a href="activePlay.html"><button class="grid-button">Name: Creator</button></a>
+          <a href="activePlay.html"><button id="B1"class="grid-button">Name: Creator</button></a>
           <a href="activePlay.html"><button class="grid-button">Name: Creator</button></a>
           <a href="activePlay.html"><button class="grid-button">Name: Creator</button></a>
 
@@ -58,7 +48,9 @@
           <a href="activePlay.html"><button class="grid-button">Name: Creator</button></a>
         </div>
     </main>
+    </body>
     <footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
       <span>Cate Allen</span>
       <a class="text-light" href="https://github.com/Cate444/stratup">GitHub</a>
     </footer>
+     <script src="sharedDecks.js"></script>
