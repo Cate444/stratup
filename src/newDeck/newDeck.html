@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CatchPhrase</title>
+    <link rel="icon" href="favicon.ico" />
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="../activePlay/activePlay.css" />
+  <script src="newDeck.js"></script>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <header class="container-fluid bg-primary">
+      <h1 class="text-center text-light catchphrase-title">CatchPhrase<sup>&reg;</sup></h1>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="../../login.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../play/play.html">Play</a></li>
+            <li class="nav-item"><a class="nav-link" href="../sharedDecks/sharedDecks.html">Shared Decks</a></li>
+            <li class="nav-item"><a class="nav-link" href="../yourDecks/yourDecks.html">Your Decks</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-grow-1 w-100">
+      <div class="player-status text-center">
+        <span id="player-name">User Name</span>
+        <span class="text-light">is playing!</span>
+      </div>
+      <img id ="img" src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/03/cover-l.jpg" width="30%"; height="auto";>
+      <h2 class="text-center text-light">Make Your Own</h2>
+    <div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Enter a Word</span>
+          <input class="form-control" type="text" id="wordInput" placeholder="Enter a word"/>
+          <button onclick="addWord()" type="submit" class="btn btn-primary">Add Word</button>
+        </div>
+    </div>
+    <div>
+      <form method="get" action="../yourDecks/yourDecks.html">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Deck Name</span>
+          <input class="form-control" type="text" id="deckNameInput" placeholder="Name" />
+          <button onclick="nameDeck()" type="submit" class="btn btn-primary">Create Deck</button>
+        </div>
+    </div>
+    <div id="wordBank">
+      <h3 class="text-center text-light">Word Bank</h3>
+      <div id="words"></div></div>
+</body>
+</main>
+<footer class="container-fluid bg-primary text-light d-flex justify-content-between align-items-center">
+  <span>Cate Allen</span>
+  <a class="text-light" href="https://github.com/Cate444/stratup">GitHub</a>
+</footer>
+</html>
+
