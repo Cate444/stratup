@@ -1,5 +1,5 @@
 {
-  "name": "simon-react",
+  "name": "catchphrase",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.7.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
   },
   "description": "This deliverable introduces the JavaScript for application interactivity.",
   "main": "index.js",

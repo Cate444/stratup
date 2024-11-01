@@ -3,8 +3,6 @@
     }
     h1.catchphrase-title {
       font-size: 5vw; /* Base size using viewport width */
-      min-font-size: 2rem; /* Minimum font size */
-      max-font-size: 5rem; /* Maximum font size */
     }  
     @media screen and (max-width: 768px) {
       h1.catchphrase-title {
@@ -54,7 +52,7 @@
   }
   
   .custom-button:hover {
-    background-color: rgb(0, 110, 255); /* Darker green on hover */
+    background-color: rgb(0, 110, 255);
   }
 
   footer a {
