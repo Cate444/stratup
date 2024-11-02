@@ -5,8 +5,6 @@
 }
 h1.catchphrase-title {
   font-size: 5vw; /* Base size using viewport width */
-  min-font-size: 2rem; /* Minimum font size */
-  max-font-size: 5rem; /* Maximum font size */
 }  
 @media screen and (max-width: 768px) {
   h1.catchphrase-title {
@@ -26,10 +24,10 @@ h1.catchphrase-title {
         font-size: 1.5em;
     }
 
-  .bg-custom {
+  /* .bg-custom {
     background-color: #1f79ff;
     color: white;
-  }
+  } */
   
   header {
     background-color: blue;
@@ -45,14 +43,14 @@ h1.catchphrase-title {
     padding: 20px;
   }
 
-body {
+/* body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: rgb(95, 192, 237);
-}
+} */
 
   
   menu {
@@ -76,9 +74,9 @@ body {
   }
   #word-box {
     border: 2px solid rgb(62, 184, 245);
-      padding: 20px;
-      font-size: 24px;
-      margin-bottom: 20px;
+    padding: 20px;
+    font-size: 24px;
+     margin-bottom: 20px;
     background-color: white;
   }
   #next-button {

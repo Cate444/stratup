@@ -7,6 +7,7 @@ import { Play } from './play/play.jsx';
 import { SharedDecks } from './sharedDecks/sharedDecks.jsx';
 import { YourDecks } from './yourDecks/yourDecks.jsx';
 import { Login } from './login/login.jsx';
+import { ActivePlay } from './activePlay/activePlay.jsx';
 
 export function NavButton({ text, url }) {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function App() {
         <header className='container-fluid text-center'>
           <nav className='navbar navbar-expand-lg navbar-dark bg-primary fixed-top flex-column'>
             <div className='container-fluid d-flex justify-content-center'>
-              <a className='navbar-brand mb-0 h1' href='index.html'>
+              <a className='navbar-brand mb-0 h1'>
                 CatchPhrase<sup>&reg;</sup>
               </a>
             </div>
@@ -58,6 +59,7 @@ export default function App() {
           <Route path='/sharedDecks' element={<SharedDecks />} />
           <Route path='/yourDecks' element={<YourDecks />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/activePlay' element={<ActivePlay />} /> 
         </Routes>
 
         <footer className='bg-primary w-100'>

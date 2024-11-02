@@ -104,7 +104,7 @@
   }
   
   .navbar-nav {
-    width: 100%;
+    width: 0%;
     justify-content: center;
   }
   
@@ -131,7 +131,7 @@
     align-items: center;
     padding: 20px;
     min-height: 100vh;
-    padding-top: 120px; /* Adjust this value based on your navbar height */
+    padding-top: 200px; /* Adjust this value based on your navbar height */
     padding-bottom: 70px; /* Adjust this value based on your footer height */
   }
   
