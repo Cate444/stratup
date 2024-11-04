@@ -8,6 +8,7 @@ import { SharedDecks } from './sharedDecks/sharedDecks.jsx';
 import { YourDecks } from './yourDecks/yourDecks.jsx';
 import { Login } from './login/login.jsx';
 import { ActivePlay } from './activePlay/activePlay.jsx';
+import { NewDeck } from './newDeck/newDeck.jsx';
 
 export function NavButton({ text, url }) {
   const navigate = useNavigate();
@@ -60,6 +61,7 @@ export default function App() {
           <Route path='/yourDecks' element={<YourDecks />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/activePlay' element={<ActivePlay />} /> 
+          <Route path='/newDeck' element={<NewDeck />} /> 
         </Routes>
 
         <footer className='bg-primary w-100'>

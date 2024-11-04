@@ -1,5 +1,5 @@
 .player-status {
-  padding: 100px;
+  padding: 170px;
   font-size: 20px;
 }
 
@@ -8,12 +8,7 @@ color: rgb(118, 190, 210);
 font-size: 25px;
 }
 
-/* Tablet screens */
-@media screen and (min-width: 768px) {
-.button-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
-}
+
 
 /* Desktop screens */
 @media screen and (min-width: 1024px) {
@@ -71,11 +66,14 @@ transform: scale(1.05);
 .button-grid {
   grid-template-columns: 1fr; /* 1 column on very small screens */
 }
+
 }
 body, #root {
 display: flex;
 flex-direction: column;
 min-height: 100vh;
+margin: 0; /* Removes default margin */
+background-color: white;
 }
 
 header, footer {
@@ -83,6 +81,7 @@ flex-shrink: 0;
 }
 
 main {
+background-color: white;
 flex-grow: 1;
 display: flex;
 flex-direction: column;
