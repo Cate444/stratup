@@ -46,7 +46,7 @@
     min-height: 100vh;
     padding-top: 200px; /* Adjust this value based on your navbar height */
     padding-bottom: 70px; /* Adjust this value based on your footer height */
-    background-color: rgb(95, 192, 237);
+    /* background-color: rgb(95, 192, 237); */
   }
   
   main {

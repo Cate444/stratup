@@ -3,18 +3,20 @@ import './play.css';
 import { NavLink } from 'react-router-dom';
 
 export function Play() {
-  useEffect(() => {
-    document.body.style.backgroundColor = 'white';
-    return () => {
-      document.body.style.backgroundColor = '';
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.backgroundColor = 'white';
+  //   //document.main.style.backgroundColor = 'white';
+  //   return () => {
+  //     document.body.style.backgroundColor = '';
+  //     //document.main.style.backgroundColor = '';
+  //   };
+  // }, []);
 
   return (
     <div className="play-page">
       <main className="flex-grow-1 w-100">
         <div className="player-status text-center">
-          <span className="player-name">User Name </span>
+          <span className="player-name custom-color">User Name </span>
           <span className="playing-text text-dark">is playing!</span>
         </div>
         <div className="button-grid">

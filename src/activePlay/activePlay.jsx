@@ -18,13 +18,13 @@ export function ActivePlay() {
   return (
     <main className="flex-grow-1 w-100">
       <div className="player-status text-center">
-        <span id="player-name">User Name</span>
-        <span className="text-light">is playing!</span>
+        <span className="custom-color">User Name </span>
+        <span className="text-dark">is playing!</span>
       </div>
-      <h1 className="text-light">Category</h1>
+      <h1 className="text-primary">Category</h1>
       <div className="game-container">
         <div className="text-light">
-          <h2>Team A</h2>
+          <h2 className='custom-color'>Team A</h2>
           <p id="team-a-score">0</p>
         </div>
         <div className="game-center">
@@ -34,7 +34,7 @@ export function ActivePlay() {
           </button>
         </div>
         <div className="text-light">
-          <h2>Team B</h2>
+          <h2 className='custom-color'>Team B</h2>
           <p id="team-b-score">0</p>
         </div>
       </div>

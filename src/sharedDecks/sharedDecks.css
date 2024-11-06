@@ -54,10 +54,7 @@
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.grid-button:hover {
-  background-color: rgb(113, 197, 220);
-  transform: scale(1.05);
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

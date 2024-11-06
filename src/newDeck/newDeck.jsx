@@ -27,7 +27,7 @@ export function NewDeck() {
      <div className="player-status text-center">
         </div>
         <img id="img" src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/03/cover-l.jpg" width="30%" height="auto" alt="Cover" />
-        <h2 className="text-center text-light">Make Your Own</h2>
+        <h2 className="text-center custom-color">Make Your Own</h2>
         <div>
           <div className="input-group mb-3">
             <span className="input-group-text">Enter a Word</span>
@@ -55,8 +55,8 @@ export function NewDeck() {
           </div>
         </div>
         <div id="wordBank">
-          <h3 className="text-center text-light">Word Bank</h3>
-          <div id="words">
+          <h3 className="text-center custom-color">Word Bank</h3>
+          <div className="custom-color"id="words">
             {currentDeckName && <h4>Deck Name: {currentDeckName}</h4>}
             <ul>
               {allWords.map((word, index) => (

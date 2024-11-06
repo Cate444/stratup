@@ -9,6 +9,8 @@ import { YourDecks } from './yourDecks/yourDecks.jsx';
 import { Login } from './login/login.jsx';
 import { ActivePlay } from './activePlay/activePlay.jsx';
 import { NewDeck } from './newDeck/newDeck.jsx';
+import { AuthState } from './login/authState';
+
 
 export function NavButton({ text, url }) {
   const navigate = useNavigate();
@@ -25,6 +27,9 @@ function NotFound() {
 
 
 export default function App() {
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+  const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+  const [authState, setAuthState] = React.useState(currentAuthState);
   return (
     <BrowserRouter>
       <div className='body text-light'>
@@ -55,6 +60,19 @@ export default function App() {
         </header>
 
         <Routes>
+        <Route
+            path='/'
+            element={
+              <Login
+                userName={userName}
+                authState={authState}
+                onAuthChange={(userName, authState) => {
+                  setAuthState(authState);
+                  setUserName(userName);
+                }}
+              />
+            }
+            exact/>
           <Route path='/' element={<Login />} />
           <Route path='/play' element={<Play />} />
           <Route path='/sharedDecks' element={<SharedDecks />} />
