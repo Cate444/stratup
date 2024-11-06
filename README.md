@@ -60,3 +60,13 @@ All pages have a header with title and links to other parts of the website and a
 * light text
 ### Application images
 * Micheal Scott in add new deck
+
+### React deliverable
+For this deliverable I used JavaScript and React so that the application completely works for a single user. I also added placeholders for future technology.
+ * Bundled and transpiled - done!
+ * Components - Login, creating decks, playing decks,and login, WebSocket.
+ * login - When you press enter or the login button it say welcome user name.
+ * database - Displayed the words in a deck. Currently personal decks are stored and retrieved from local storage, but it will be replaced with the database data later.
+ * WebSocket - Decks will be shared between player. This will be replaced with WebSocket messages later.
+ * Router - Routing between login and game components.
+ * Hooks - uses hooks to set user name. 
