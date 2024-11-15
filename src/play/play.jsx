@@ -13,14 +13,12 @@ export function Play() {
   // }, []);
 
   return (
-    <div className="play-page">
-      <main className="flex-grow-1 w-100">
-        <div className="player-status text-center">
-          <span className="player-name custom-color">User Name </span>
-          <span className="playing-text text-dark">is playing!</span>
-        </div>
-        <div className="button-grid">
-    <NavLink className='nav-link' to='/activePlay'><button className="grid-button">Fun and Games</button></NavLink>
+      <main class="flex-grow-1 w-100">
+      <div class="player-status text-center">
+        <span class="player-name">User Name </span>
+        <span class="playing-text text-dark">is playing!</span>
+      <div class="button-grid">
+      <NavLink className='nav-link' to='/activePlay'><button className="grid-button">Fun and Games</button></NavLink>
     <NavLink className='nav-link' to='/activePlay'><button className="grid-button">The World</button></NavLink>
     <NavLink className='nav-link' to='/activePlay'><button className="grid-button">Entertainment</button></NavLink>
     <NavLink className='nav-link' to='/activePlay'><button className="grid-button">Slogans</button></NavLink>
@@ -30,7 +28,7 @@ export function Play() {
     <NavLink className='nav-link' to='/activePlay'><button className="grid-button">Urban Dictionary</button></NavLink>
     <NavLink className='nav-link' to='/activePlay'><button className="grid-button">Everything</button></NavLink>
     </div>
-      </main>
-    </div>
-  );
-}
+      </div>
+  </main>
+    );
+  }

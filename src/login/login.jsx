@@ -1,5 +1,8 @@
 import React from 'react';
 import './login.css';
+import { Unauthenticated } from './unauthenticated';
+import { Authenticated } from './authenticated';
+import { AuthState } from './authState';
 //import { NavLink } from 'react-router-dom';
 
 // export function Login() {
@@ -30,10 +33,6 @@ import './login.css';
 //   );
 // }
 
-
-import { Unauthenticated } from './unauthenticated';
-import { Authenticated } from './authenticated';
-import { AuthState } from './authState';
 
 export function Login({ userName, authState, onAuthChange }) {
   return (

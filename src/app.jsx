@@ -1,8 +1,6 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import './app.css';
 import { Play } from './play/play.jsx';
 import { SharedDecks } from './sharedDecks/sharedDecks.jsx';
 import { YourDecks } from './yourDecks/yourDecks.jsx';
@@ -10,6 +8,8 @@ import { Login } from './login/login.jsx';
 import { ActivePlay } from './activePlay/activePlay.jsx';
 import { NewDeck } from './newDeck/newDeck.jsx';
 import { AuthState } from './login/authState';
+import './app.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export function NavButton({ text, url }) {
@@ -25,35 +25,43 @@ function NotFound() {
   return <main> 404 Not Found </main>;
 }
 
-
 export default function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
   const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
   const [authState, setAuthState] = React.useState(currentAuthState);
+  
   return (
     <BrowserRouter>
       <div className='body text-light'>
         <header className='container-fluid text-center'>
           <nav className='navbar navbar-expand-lg navbar-dark bg-primary fixed-top flex-column'>
             <div className='container-fluid d-flex justify-content-center'>
-              <a className='navbar-brand mb-0 h1'>
-                CatchPhrase<sup>&reg;</sup>
-              </a>
+            <a className='navbar-brand mb-0 h1' style={{ fontSize: '5rem' }}>
+              CatchPhrase<sup>&reg;</sup></a>
             </div>
             <div className='navbar-collapse justify-content-center'>
               <ul className='navbar-nav'>
+
+              <li className='nav-item'>
+              <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to=''>
+                  Login
+                </NavLink>
+              </li>
+              {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
-                  <NavLink className='nav-link' to=''>Home</NavLink>
+                  <NavLink className='nav-link'style={{ fontSize: '1.5rem' }}to='play'>
+                    Play
+                  </NavLink>
                 </li>
+              )}
+              {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
-                  <NavLink className='nav-link' to='/play'>Play</NavLink>
+                 <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/sharedDecks'>Shared Decks</NavLink>
                 </li>
-                <li className='nav-item'>
-                  <NavLink className='nav-link' to='/sharedDecks'>Shared Decks</NavLink>
-                </li>
-                <li className='nav-item'>
-                  <NavLink className='nav-link' to='/yourDecks'>Your Decks</NavLink>
-                </li>
+              )}
+              <li className='nav-item'>
+              <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/yourDecks'>Your Decks</NavLink>
+              </li>     
               </ul> 
             </div>
           </nav>
@@ -72,7 +80,7 @@ export default function App() {
                 }}
               />
             }
-            exact/>
+            />
           <Route path='/' element={<Login />} />
           <Route path='/play' element={<Play />} />
           <Route path='/sharedDecks' element={<SharedDecks />} />
