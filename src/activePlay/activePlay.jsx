@@ -6,7 +6,7 @@ export function ActivePlay(props) {
   const [wordBank] = useState(['word1', 'word2', 'word3', 'word4', 'word5']);
   const [currentIndex, setCurrentIndex] = useState(0);
   const category = props.category;
-
+  
   useEffect(() => {
     displayNextWord();
   }, []); // This will run once when the component mounts
@@ -24,7 +24,7 @@ export function ActivePlay(props) {
       <div className="game-container">
         <div className="text-light">
           <h2 className='custom-color'>Team A</h2>
-          <p id="team-a-score">0</p>
+          <p className='custom-color'id="team-a-score">0</p>
         </div>
         <div className="game-center">
           <div id="word-box">{currentWord}</div>
@@ -34,7 +34,7 @@ export function ActivePlay(props) {
         </div>
         <div className="text-light">
           <h2 className='custom-color'>Team B</h2>
-          <p id="team-b-score">0</p>
+          <p className='custom-color'id="team-b-score">0</p>
         </div>
       </div>
     </main>

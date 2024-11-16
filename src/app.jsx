@@ -91,8 +91,8 @@ export default function App() {
 
           <Route path='/' element={<Login />} />
           <Route path='/play' element={<Play userName={userName} setCategory={setCategory} />} />
-          <Route path='/sharedDecks' element={<SharedDecks userName={userName}/>} />
-          <Route path='/yourDecks' element={<YourDecks userName={userName} deckName={deckName} />} />
+          <Route path='/sharedDecks' element={<SharedDecks userName={userName} setCategory={setCategory}/>} />
+          <Route path='/yourDecks' element={<YourDecks userName={userName} deckName={deckName} setCategory={setCategory} />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/activePlay' element={<ActivePlay category={category} />} /> 
           <Route path='/newDeck' element={<NewDeck updateDeckName={updateDeckName} />} />

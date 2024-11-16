@@ -9,6 +9,22 @@ export function NewDeck({ updateDeckName }) {
   const [deckNameInput, setDeckNameInput] = useState("");
   const navigate = useNavigate();
 
+  const [quote, setQuote] = React.useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
+
+  React.useEffect(() => {
+
+    fetch('https://quote.cs260.click')
+      .then((response) => response.json())
+      .then((data) => {
+        setQuote(data.quote);
+        setQuoteAuthor(data.author);
+      })
+      .catch();
+  }, []);
+
+
+
   const addWord = () => {
     if (wordInput.trim() !== "") {
       setAllWords([...allWords, wordInput.trim()]);
@@ -47,6 +63,13 @@ export function NewDeck({ updateDeckName }) {
   return (
           <main className="new-deck-container">
            <div className="player-status text-center">
+            
+           <div className='quote-box bg-light text-dark'>
+          <p className='quote'>{quote}</p>
+          <p className='author'>{quoteAuthor}</p>
+        </div>
+
+
               </div>
               <img id="img" src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/03/cover-l.jpg" width="30%" height="auto" alt="Cover" />
               <h2 className="text-center custom-color">Make Your Own</h2>
