@@ -1,10 +1,11 @@
 import './activePlay.css';
 import React, { useState, useEffect } from 'react';
 
-export function ActivePlay() {
+export function ActivePlay(props) {
   const [currentWord, setCurrentWord] = useState('');
   const [wordBank] = useState(['word1', 'word2', 'word3', 'word4', 'word5']);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const category = props.category;
 
   useEffect(() => {
     displayNextWord();
@@ -18,10 +19,8 @@ export function ActivePlay() {
   return (
     <main className="flex-grow-1 w-100">
       <div className="player-status text-center">
-        <span className="custom-color">User Name </span>
-        <span className="text-dark">is playing!</span>
       </div>
-      <h1 className="text-primary">Category</h1>
+      <h1 className="text-primary">{category}</h1>
       <div className="game-container">
         <div className="text-light">
           <h2 className='custom-color'>Team A</h2>

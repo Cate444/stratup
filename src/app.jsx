@@ -29,6 +29,7 @@ export default function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
   const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
   const [authState, setAuthState] = React.useState(currentAuthState);
+  const [category, setCategory] = React.useState('');
   
   return (
     <BrowserRouter>
@@ -82,11 +83,11 @@ export default function App() {
             }
             />
           <Route path='/' element={<Login />} />
-          <Route path='/play' element={<Play />} />
-          <Route path='/sharedDecks' element={<SharedDecks />} />
-          <Route path='/yourDecks' element={<YourDecks />} />
+          <Route path='/play' element={<Play userName={userName} setCategory={setCategory} />} />
+          <Route path='/sharedDecks' element={<SharedDecks userName={userName}/>} />
+          <Route path='/yourDecks' element={<YourDecks userName={userName}/>} />
           <Route path='*' element={<NotFound />} />
-          <Route path='/activePlay' element={<ActivePlay />} /> 
+          <Route path='/activePlay' element={<ActivePlay category={category} />} /> 
           <Route path='/newDeck' element={<NewDeck />} /> 
         </Routes>
 

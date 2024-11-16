@@ -60,28 +60,32 @@ apiRouter.delete('/auth/logout', (req, res) => {
   res.status(204).end();
 });
 
+// const express = require('express');
+// const app = express();
+
+// app.use(express.json());
+
+// app.post('/api/selectCategory', (req, res) => {
+//   const { category } = req.body;
+//   console.log(`Selected category: ${category}`);
+//   // Here you can do whatever you need with the category
+//   // For example, you might want to store it in a database or use it to generate game content
+
+//   res.status(200).json({ message: 'Category received successfully' });
+// });
+
+apiRouter.get('/selectCategory', (req, res) => {
+  console.log('category selected');
+  res.send('Hello World!');
+});
+
 var testData = { test: "testData" };
 apiRouter.get('/test', (_req, res) => {
   console.log('in backend');
   console.log('Sending:', testData);
   res.send(testData);
 });
-// apiRouter.get('/test', (_req, res) => {
-//   console.log('in backend');
-//   res.send(testData);
-// });
 
-
-// // GetScores
-// apiRouter.get('/scores', (_req, res) => {
-//   res.send(scores);
-// });
-
-// // SubmitScore
-// apiRouter.post('/score', (req, res) => {
-//   scores = updateScores(req.body, scores);
-//   res.send(scores);
-// });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
