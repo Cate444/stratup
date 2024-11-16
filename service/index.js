@@ -60,23 +60,15 @@ apiRouter.delete('/auth/logout', (req, res) => {
   res.status(204).end();
 });
 
-// const express = require('express');
-// const app = express();
-
-// app.use(express.json());
-
-// app.post('/api/selectCategory', (req, res) => {
-//   const { category } = req.body;
-//   console.log(`Selected category: ${category}`);
-//   // Here you can do whatever you need with the category
-//   // For example, you might want to store it in a database or use it to generate game content
-
-//   res.status(200).json({ message: 'Category received successfully' });
-// });
-
 apiRouter.get('/selectCategory', (req, res) => {
   console.log('category selected');
   res.send('Hello World!');
+});
+
+var deckData = { deckName: "testDeck" };
+apiRouter.get('/deckCreated', (req, res) => {
+  console.log('deck created');
+  res.send(deckData);
 });
 
 var testData = { test: "testData" };
