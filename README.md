@@ -69,4 +69,11 @@ For this deliverable I used JavaScript and React so that the application complet
  * database - Displayed the words in a deck. Currently personal decks are stored and retrieved from local storage, but it will be replaced with the database data later.
  * WebSocket - Decks will be shared between player. This will be replaced with WebSocket messages later.
  * Router - Routing between login and game components.
- * Hooks - uses hooks to set user name. 
+ * Hooks - uses hooks to set user name.
+
+### Startup Service 
+* I created an HTTP service using Node.js and Express
+* I have a frontend served up using Express static middleware
+* My frontend calls third party service endpoints, to get the random quote on the New Decks page
+* My backend provides service endpoints at when passing deck names, and user name between pages
+* My front calls these end points each time someone logs in, starts a new game, or creates a new deck
