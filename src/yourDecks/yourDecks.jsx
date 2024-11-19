@@ -44,7 +44,9 @@ export function YourDecks({ userName, deckName, setCategory }) {
         <span className="player-name">{userName} </span>
         <span className="playing-text text-dark">is playing!</span>
         <div className="button-grid">
-          {deckNames.map((buttonName) => (
+        {deckNames.length > 0 ? (
+          deckNames.map((buttonName) => (
+            console.log(buttonName),
             <button 
               key={buttonName}
               className="grid-button" 
@@ -52,7 +54,9 @@ export function YourDecks({ userName, deckName, setCategory }) {
             >
               {buttonName}
             </button>
-          ))}
+          ))): (
+            <p>no decks</p>
+         )}
           <NavLink className='nav-link' to='/newDeck'>
             <button className="grid-button">+</button>
           </NavLink> 
@@ -68,7 +72,7 @@ export function YourDecks({ userName, deckName, setCategory }) {
 
 // export function YourDecks({ userName, deckName, setCategory }) {
 //   const [deckNames, setDeckNames] = useState(() => {
-//     const savedDeckNames = localStorage.getItem('deckNames');
+//   const savedDeckNames = localStorage.getItem('deckNames');
 //     return savedDeckNames ? JSON.parse(savedDeckNames) : [];
 //   });
 //   const navigate = useNavigate();

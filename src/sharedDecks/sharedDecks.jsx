@@ -36,9 +36,9 @@ export function SharedDecks({ userName, setCategory }) {
         <div className="button-grid">
           {[
             "The Office: example",
-            "Name: Creator",
-            "Name: Creator",
-            "Name: Creator",
+            "Name1: Creator",
+            "Name2: Creator",
+            "Name3: Creator",
           ].map((buttonName) => (
             <button 
               key={buttonName}

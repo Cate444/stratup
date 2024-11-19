@@ -12,14 +12,14 @@ import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export function NavButton({ text, url }) {
-  const navigate = useNavigate();
-  return (
-    <Button variant='primary' onClick={() => navigate(url)}>
-      {text}
-    </Button>
-  );
-}
+// export function NavButton({ text, url }) {
+//   const navigate = useNavigate();
+//   return (
+//     <Button variant='primary' onClick={() => navigate(url)}>
+//       {text}
+//     </Button>
+//   );
+// }
 
 function NotFound() {
   return <main> 404 Not Found </main>;

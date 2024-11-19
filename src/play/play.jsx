@@ -42,7 +42,6 @@ export function Play({ userName, setCategory }) {
             "Snack Time",
             "Around the House",
             "Urban Dictionary",
-            "Everything"
           ].map((buttonName) => (
             <button 
               key={buttonName}
