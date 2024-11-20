@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './newDeck.css';
 
+
 export function NewDeck({ updateDeckName }) {
   const [allWords, setAllWords] = useState([]);
   const [currentDeckName, setCurrentDeckName] = useState("");
@@ -24,7 +25,6 @@ export function NewDeck({ updateDeckName }) {
   }, []);
 
 
-
   const addWord = () => {
     if (wordInput.trim() !== "") {
       setAllWords([...allWords, wordInput.trim()]);
@@ -32,25 +32,32 @@ export function NewDeck({ updateDeckName }) {
     }
   };
 
+
   const handleCreate = async () => {
     if (deckNameInput.trim() !== "") {
       try {
+        const newDeckObject = { 
+          deckName: deckNameInput.trim(),
+          words: allWords
+        };
+
         const response = await fetch('/api/deckCreated', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ 
-            deckName: deckNameInput,
-            words: allWords
-          }),
+          body: JSON.stringify(newDeckObject),
         });
 
         if (response.ok) {
-          updateDeckName(deckNameInput.trim()); // Update the deck name in App state
-          setCurrentDeckName(deckNameInput.trim());
+          updateDeckName(newDeckObject.deckName);
+          setCurrentDeckName(newDeckObject.deckName);
+          console.log("Deck Name:", newDeckObject.deckName);
+          console.log("Deck Words:", newDeckObject.words);
+          console.log("Deck Object:", newDeckObject);
+
           setDeckNameInput("");
-          navigate('/yourDecks'); // Redirect to yourDecks page
+          navigate('/yourDecks');
         } else {
           console.error('Failed to send deck name to backend');
         }

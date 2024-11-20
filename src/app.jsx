@@ -11,16 +11,6 @@ import { AuthState } from './login/authState';
 import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-// export function NavButton({ text, url }) {
-//   const navigate = useNavigate();
-//   return (
-//     <Button variant='primary' onClick={() => navigate(url)}>
-//       {text}
-//     </Button>
-//   );
-// }
-
 function NotFound() {
   return <main> 404 Not Found </main>;
 }
@@ -32,10 +22,11 @@ export default function App() {
   const [category, setCategory] = React.useState('');
   const [deckNameInput, setDeckNameInput] = React.useState("");
   const [deckName, setDeckName] = React.useState("");
+  const [deckObject, setDeckObject] = React.useState({});
 
   const updateDeckName = (name) => {
     setDeckName(name);
-};
+  };
   
   return (
     <BrowserRouter>
@@ -88,14 +79,35 @@ export default function App() {
               />
             }
             />
+                    <Route path='/yourDecks' element={
+          <YourDecks 
+            userName={userName} 
+            deckName={deckName} 
+            setCategory={setCategory}
+            deckObject={deckObject}
+            setDeckObject={setDeckObject}
+          />
+        } />
+        <Route path='/activePlay' element={
+          <ActivePlay 
+            category={category} 
+            deckObject={deckObject}
+          />
+        } />  
+        <Route path='/newDeck' element={
+          <NewDeck 
+            updateDeckName={updateDeckName} 
+            setDeckObject={setDeckObject} 
+          />
+        } />  
 
           <Route path='/' element={<Login />} />
           <Route path='/play' element={<Play userName={userName} setCategory={setCategory} />} />
           <Route path='/sharedDecks' element={<SharedDecks userName={userName} setCategory={setCategory}/>} />
-          <Route path='/yourDecks' element={<YourDecks userName={userName} deckName={deckName} setCategory={setCategory} />} />
+          {/* <Route path='/yourDecks' element={<YourDecks userName={userName} deckName={deckName} setCategory={setCategory} />} /> */}
           <Route path='*' element={<NotFound />} />
-          <Route path='/activePlay' element={<ActivePlay category={category} />} /> 
-          <Route path='/newDeck' element={<NewDeck updateDeckName={updateDeckName} />} />
+          {/* <Route path='/activePlay' element={<ActivePlay category={category} deckObject={deckObject}/>} />   */}
+          {/* <Route path='/newDeck' element={<NewDeck updateDeckName={updateDeckName} setDeckObject={setDeckObject} />} />   */}
         </Routes>
 
         <footer className='bg-primary w-100'>

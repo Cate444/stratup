@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 
 export function ActivePlay(props) {
   const category = props.category;
+  const deckObject = props.deckObject;
+  console.log("deckObjet in Active Play:", deckObject);
 
   const funAndGamesPhrases = [
     "Hide and Seek",
@@ -406,6 +408,8 @@ export function ActivePlay(props) {
   const [wordBank, setWordBank] = useState([]);
   const [currentWord, setCurrentWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  // const [teamAScore, setTeamAScore] = useState(0);
+  // const [teamBScore, setTeamBScore] = useState(0);
 
   useEffect(() => {
     // Set the word bank based on the category
