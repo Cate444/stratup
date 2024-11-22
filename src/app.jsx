@@ -44,21 +44,21 @@ export default function App() {
                   Login
                 </NavLink>
               </li>
-              {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
                   <NavLink className='nav-link'style={{ fontSize: '1.5rem' }}to='play'>
                     Play
                   </NavLink>
                 </li>
-              )}
               {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
                  <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/sharedDecks'>Shared Decks</NavLink>
                 </li>
               )}
+              {authState === AuthState.Authenticated && (
               <li className='nav-item'>
               <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/yourDecks'>Your Decks</NavLink>
-              </li>     
+              </li> 
+              )}    
               </ul> 
             </div>
           </nav>
@@ -101,7 +101,7 @@ export default function App() {
         } />  
 
           <Route path='/' element={<Login />} />
-          <Route path='/play' element={<Play userName={userName} setCategory={setCategory} />} />
+          <Route path='/play' element={<Play setCategory={setCategory} />} />
           <Route path='/sharedDecks' element={<SharedDecks userName={userName} setCategory={setCategory}/>} />
           <Route path='*' element={<NotFound />} />
         </Routes>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './play.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-export function Play({ userName, setCategory }) {
+export function Play({ setCategory }) {
   const navigate = useNavigate();
 
   const handleButtonClick = async (buttonName) => {
@@ -30,8 +30,6 @@ export function Play({ userName, setCategory }) {
   return (
     <main className="flex-grow-1 w-100">
       <div className="player-status text-center">
-        <span className="player-name">{userName} </span>
-        <span className="playing-text text-dark">is playing!</span>
         <div className="button-grid">
           {[
             "Fun and Games",
