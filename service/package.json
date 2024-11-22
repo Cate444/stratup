@@ -1,5 +1,5 @@
 {
-  "name": "catchphrase-service",
+  "name": "cathchphrase-service",
   "version": "1.0.0",
   "description": "This demonstrates a service for a web application.",
   "main": "index.js",
@@ -9,8 +9,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.21.1",
-    "uuid": "^10.0.0"
-  },
-  "keywords": []
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "mongodb": "^4.12.0",
+    "uuid": "^9.0.0"
+  }
 }

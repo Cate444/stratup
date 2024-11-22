@@ -11,11 +11,18 @@
     "vite": "^5.4.10"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.2.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.1",
+    "mongodb": "^6.11.0",
+    "mongoose": "^6.2.10",
     "react": "^18.3.1",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.27.0"
+    "react-router-dom": "^6.27.0",
+    "uuid": "^11.0.3",
+    "ws": "^8.5.0"
   },
   "description": "This deliverable introduces the JavaScript for application interactivity.",
   "main": "index.js",

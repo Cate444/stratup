@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
 import { Play } from './play/play.jsx';
 import { SharedDecks } from './sharedDecks/sharedDecks.jsx';
 import { YourDecks } from './yourDecks/yourDecks.jsx';
@@ -79,7 +78,7 @@ export default function App() {
               />
             }
             />
-                    <Route path='/yourDecks' element={
+          <Route path='/yourDecks' element={
           <YourDecks 
             userName={userName} 
             deckName={deckName} 
@@ -104,10 +103,7 @@ export default function App() {
           <Route path='/' element={<Login />} />
           <Route path='/play' element={<Play userName={userName} setCategory={setCategory} />} />
           <Route path='/sharedDecks' element={<SharedDecks userName={userName} setCategory={setCategory}/>} />
-          {/* <Route path='/yourDecks' element={<YourDecks userName={userName} deckName={deckName} setCategory={setCategory} />} /> */}
           <Route path='*' element={<NotFound />} />
-          {/* <Route path='/activePlay' element={<ActivePlay category={category} deckObject={deckObject}/>} />   */}
-          {/* <Route path='/newDeck' element={<NewDeck updateDeckName={updateDeckName} setDeckObject={setDeckObject} />} />   */}
         </Routes>
 
         <footer className='bg-primary w-100'>
