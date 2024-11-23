@@ -77,3 +77,11 @@ For this deliverable I used JavaScript and React so that the application complet
 * My frontend calls third party service endpoints, to get the random quote on the New Decks page
 * My backend provides service endpoints at when passing deck names, and user name between pages
 * My front calls these end points each time someone logs in, starts a new game, or creates a new deck
+
+### Startup Login
+* my application supports new user registration
+* Existing user get authenticated and can logout
+* usernames, tokens, and passawords are in MongoDB
+* Stores and retrieves credentials in MongoDB
+* Restricts application functionality based upon authentication with only letting you access play when not logged in
+
