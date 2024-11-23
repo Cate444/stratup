@@ -1,10 +1,16 @@
 import './activePlay.css';
 import React, { useState, useEffect } from 'react';
+import { NavLink} from 'react-router-dom';
 
 export function ActivePlay(props) {
   const category = props.category;
-  const deckObject = props.deckObject;
-  console.log("deckObjet in Active Play:", deckObject);
+  const [wordBank, setWordBank] = useState([]);
+  const [currentWord, setCurrentWord] = useState('');
+  //const [currentIndex, setCurrentIndex] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup2, setShowPopup2] = useState(false);
+  const [teamAScore, setTeamAScore] = useState(0);
+  const [teamBScore, setTeamBScore] = useState(0);
 
   const funAndGamesPhrases = [
     "Hide and Seek",
@@ -403,13 +409,7 @@ export function ActivePlay(props) {
     "Fire",
     "Sus",
     "Clout"
-  ];        
-
-  const [wordBank, setWordBank] = useState([]);
-  const [currentWord, setCurrentWord] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  // const [teamAScore, setTeamAScore] = useState(0);
-  // const [teamBScore, setTeamBScore] = useState(0);
+  ]; 
 
   useEffect(() => {
     // Set the word bank based on the category
@@ -438,9 +438,46 @@ export function ActivePlay(props) {
     }
   }, [wordBank]);
 
+  useEffect(() => {
+    startRandomTimer();
+  }, []);
+
+  const startRandomTimer = () => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, Math.floor(Math.random() * (60000 - 30000 + 1) + 30000)); // Random time between 30-60 seconds
+    return () => clearTimeout(timer);
+  };
+
+  // const displayNextWord = () => {
+  //   setCurrentWord(wordBank[currentIndex]);
+  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % wordBank.length);
+  // };
+
   const displayNextWord = () => {
-    setCurrentWord(wordBank[currentIndex]);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % wordBank.length);
+    const randomIndex = Math.floor(Math.random() * wordBank.length);
+    setCurrentWord(wordBank[randomIndex]);
+  };
+
+  const handleTeamA = () => {
+    setShowPopup(false);
+    setShowPopup2(true);
+    setTeamAScore(teamAScore + 1);
+  };
+
+  const handleTeamB = () => {
+    setShowPopup(false);
+    setShowPopup2(true);
+    setTeamBScore(teamBScore + 1);
+  };
+
+  const handleContinue = () => {
+    setShowPopup2(false);
+    startRandomTimer();
+  };
+
+  const handleQuit = () => {
+    navigate('/play');
   };
 
   return (
@@ -451,7 +488,7 @@ export function ActivePlay(props) {
       <div className="game-container">
         <div className="text-light">
           <h2 className='custom-color'>Team A</h2>
-          <p className='custom-color' id="team-a-score">0</p>
+          <p className='custom-color' id="team-a-score">{teamAScore}</p>
         </div>
         <div className="game-center">
           <div id="word-box">{currentWord}</div>
@@ -461,9 +498,33 @@ export function ActivePlay(props) {
         </div>
         <div className="text-light">
           <h2 className='custom-color'>Team B</h2>
-          <p className='custom-color' id="team-b-score">0</p>
+          <p className='custom-color' id="team-b-score">{teamBScore}</p>
         </div>
       </div>
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Who won?</h2>
+            <div className="popup-buttons">
+              <button onClick={handleTeamA} className="btn btn-primary">Team A</button>
+              <button onClick={handleTeamB} className="btn btn-primary">Team B</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {showPopup2 && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Do you want to continue?</h2>
+            <div className="popup-buttons">
+              <button onClick={handleContinue} className="btn btn-primary">Continue</button>
+              <NavLink className='nav-link' to='/play'>
+              <button onClick={handleQuit} className="btn btn-primary">Quit</button>
+              </NavLink>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
