@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './yourDecks.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-export function YourDecks({ userName, deckName, setCategory, deckObject, setDeckObject }) {
+export function YourDecks({ userName, deckName, setCategory, deckObject }) {
+  console.log('User Name in yourDecks:', userName);
+  console.log('Deck Name in yourDecks:', deckName);
+  console.log('Deck Objects in yourDecks:', deckObject);
   const [deckNames, setDeckNames] = useState(() => {
     const savedDeckNames = localStorage.getItem('deckNames');
     return savedDeckNames ? JSON.parse(savedDeckNames) : [];
@@ -30,10 +33,10 @@ export function YourDecks({ userName, deckName, setCategory, deckObject, setDeck
       if (response.ok) {
         setCategory(deckName);
         // Assuming deckObject has the structure { deckName: string, words: string[] }
-        setDeckObject(prevDeckObject => ({
-          ...prevDeckObject,
-          deckName: deckName,
-        }));
+        // setDeckObject(prevDeckObject => ({
+        //   ...prevDeckObject,
+        //   deckName: deckName,
+        // }));
         console.log('Deck Object in yourDecks:', deckObject);
         navigate('/activePlay');
       } else {

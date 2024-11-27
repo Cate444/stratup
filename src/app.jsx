@@ -19,12 +19,15 @@ export default function App() {
   const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
   const [authState, setAuthState] = React.useState(currentAuthState);
   const [category, setCategory] = React.useState('');
-  const [deckNameInput, setDeckNameInput] = React.useState("");
   const [deckName, setDeckName] = React.useState("");
   const [deckObject, setDeckObject] = React.useState({});
 
   const updateDeckName = (name) => {
     setDeckName(name);
+  };
+
+  const updateDeckObject = (deck) => {
+    setDeckObject(deck);
   };
   
   return (
@@ -84,25 +87,25 @@ export default function App() {
             deckName={deckName} 
             setCategory={setCategory}
             deckObject={deckObject}
-            setDeckObject={setDeckObject}
           />
         } />
         <Route path='/activePlay' element={
           <ActivePlay 
             category={category} 
-            deckObject={deckObject}
+            deckObject={deckObject} // Ensure this is passed correctly
           />
         } />  
         <Route path='/newDeck' element={
           <NewDeck 
             updateDeckName={updateDeckName} 
-            setDeckObject={setDeckObject} 
+            updateDeckObject={updateDeckObject}
+            //setDeckObject={setDeckObject} 
           />
         } />  
 
           <Route path='/' element={<Login />} />
           <Route path='/play' element={<Play setCategory={setCategory} />} />
-          <Route path='/sharedDecks' element={<SharedDecks userName={userName} setCategory={setCategory}/>} />
+          <Route path='/sharedDecks' element={<SharedDecks userName={userName} setCategory={setCategory} />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
 

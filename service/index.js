@@ -10,13 +10,7 @@ const config = require('./dbConfig.json');
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
 const collection = client.db('authTest').collection('user');
-
-
-// let sharedDecks = []; // This should be replaced with a database in a real application
-
-// apiRouter.get('/shared-decks', (req, res) => {
-//   res.json(sharedDecks);
-// });
+const bodyParser = require('body-parser');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -181,6 +175,33 @@ var deckData = { deckName: "testDeck" };
 apiRouter.get('/deckCreated', (req, res) => {
   console.log('deck created');
   res.send(deckData);
+});
+
+app.use(bodyParser.json());
+
+let decks = {}; // In-memory storage for simplicity
+
+app.post('/api/deck', (req, res) => {
+    const { deckName, words } = req.body;
+    
+    if (!deckName || !words) {
+        return res.status(400).send('Deck name and words are required.');
+    }
+
+    // Store the deck in memory (or a database)
+    decks[deckName] = words;
+    console.log(`Deck saved: ${deckName}`);
+    res.status(200).send('Deck saved successfully.');
+});
+
+app.get('/api/deck/:deckName', (req, res) => {
+    const { deckName } = req.params;
+
+    if (decks[deckName]) {
+        res.status(200).json({ deckName, words: decks[deckName] });
+    } else {
+        res.status(404).send('Deck not found.');
+    }
 });
 
 var testData = { test: "testData" };

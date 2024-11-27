@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink} from 'react-router-dom';
 
 export function ActivePlay(props) {
+  const deckObject = props.deckObject;
   const category = props.category;
   const [wordBank, setWordBank] = useState([]);
   const [currentWord, setCurrentWord] = useState('');
@@ -429,6 +430,9 @@ export function ActivePlay(props) {
       setWordBank(aroundTheHousePhrases);
     } else if (category === "Urban Dictionary") {
       setWordBank(urbanDictionaryPhrases);
+    } else {
+      setWordBank(deckObject.words);
+      console.log(deckObject)
     }
   }, [category]);
 
@@ -448,11 +452,6 @@ export function ActivePlay(props) {
     }, Math.floor(Math.random() * (60000 - 30000 + 1) + 30000)); // Random time between 30-60 seconds
     return () => clearTimeout(timer);
   };
-
-  // const displayNextWord = () => {
-  //   setCurrentWord(wordBank[currentIndex]);
-  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % wordBank.length);
-  // };
 
   const displayNextWord = () => {
     const randomIndex = Math.floor(Math.random() * wordBank.length);
