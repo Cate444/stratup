@@ -11,6 +11,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const collection = client.db('authTest').collection('user');
 const bodyParser = require('body-parser');
+const { peerProxy } = require('./peerProxy.js');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -220,3 +221,12 @@ app.use((_req, res) => {
 // app.listen(port, () => {
 //   console.log(`Listening on port ${port}`);
 // });
+
+peerProxy(httpService);
+
+
+// Use the cookie parser middleware for tracking authentication tokens
+app.use(cookieParser());
+
+// Trust headers that are forwarded from the proxy so we can determine IP addresses
+app.set('trust proxy', true);
