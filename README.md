@@ -85,3 +85,11 @@ For this deliverable I used JavaScript and React so that the application complet
 * Stores and retrieves credentials in MongoDB
 * Restricts application functionality based upon authentication with only letting you access play when not logged in
 
+### Websocket
+side note: For how my application ended up working I changed what was doing with my websockets :)
+* Backend listens for WebSocket connection
+* Frontend makes WebSocket connection
+* messages sent over WebSocket connection
+* messsages are displayed
+* All visible elements are working - Some of your application functionality has been mocked up in previous version of the startup. Your application should feel fully functional.
+
