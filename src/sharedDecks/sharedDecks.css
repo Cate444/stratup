@@ -8,6 +8,11 @@
   font-size: 25px;
 }
 
+.sender {
+  color: rgb(118, 190, 210);
+  font-size: 25px;
+}
+
 /* Tablet screens */
 @media screen and (min-width: 768px) {
   .button-grid {
@@ -83,6 +88,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 20px;
 }

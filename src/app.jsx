@@ -54,12 +54,12 @@ export default function App() {
                 </li>
               {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
-                 <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/sharedDecks'>Shared Decks</NavLink>
+                 <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/sharedDecks'>Chat</NavLink>
                 </li>
               )}
               {authState === AuthState.Authenticated && (
               <li className='nav-item'>
-              <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/yourDecks'>Your Decks</NavLink>
+              <NavLink className='nav-link' style={{ fontSize: '1.5rem' }} to='/yourDecks'>Shared Decks</NavLink>
               </li> 
               )}    
               </ul> 

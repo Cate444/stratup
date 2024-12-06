@@ -11,10 +11,73 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const collection = client.db('authTest').collection('user');
 const bodyParser = require('body-parser');
-const { peerProxy } = require('./peerProxy.js');
+
+const {WebSocketServer} = require('ws');
+app.use(express.static('./public'));
+
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 3000; //*
+server = app.listen(port, () => {
+  console.log(`Listening on ${port}`);
+});
+
+const wss = new WebSocketServer({ noServer: true });
+
+
+server.on('upgrade', (request, socket, head) => {
+  console.log('upgrade');
+  wss.handleUpgrade(request, socket, head, (ws) => {
+    wss.emit('connection', ws, request);
+  });
+});
+
+let connections = [];
+
+wss.on('connection', (ws) => {
+  const connection = { id: connections.length + 1, alive: true, ws: ws };
+  connections.push(connection);
+
+  // ws.on('message', function message(data) {
+  //   connections.forEach((c) => {
+  //     if (c.id !== connection.id) {
+  //       c.ws.send(data);
+  //     }
+  //   });
+  // });
+
+  ws.on('message', function message(data) {
+    connections.forEach((c) => {
+      c.ws.send(data);
+    });
+  });
+
+  ws.on('close', () => {
+    connections.findIndex((o, i) => {
+    if (o.id === connection.id) {
+      connections.splice(i, 1);
+      return true;
+    }
+  });
+ });
+
+ws.on('pong', () => {
+  connection.alive = true;
+});
+});
+
+
+setInterval(() => {
+  connections.forEach((c) => {
+    if (!c.alive) {
+      c.ws.terminate();
+    } else {
+      c.alive = false;
+      c.ws.ping();
+    }
+  });
+} , 10000);
+
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -162,9 +225,9 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-const httpService = app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+// const httpService = app.listen(port, () => {
+//   console.log(`Listening on port ${port}`);
+// });
 
 
 apiRouter.get('/selectCategory', (req, res) => {
@@ -222,11 +285,13 @@ app.use((_req, res) => {
 //   console.log(`Listening on port ${port}`);
 // });
 
-peerProxy(httpService);
+//const express = require('express');
+// const app = express();
 
+// Serve up our webSocket client HTML
+//app.use(express.static('./public'));
 
-// Use the cookie parser middleware for tracking authentication tokens
-app.use(cookieParser());
-
-// Trust headers that are forwarded from the proxy so we can determine IP addresses
-app.set('trust proxy', true);
+// const port = process.argv.length > 2 ? process.argv[2] : 3000;
+// server = app.listen(port, () => {
+//   console.log(`Listening on ${port}`);
+// });
